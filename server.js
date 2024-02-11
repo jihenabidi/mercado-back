@@ -20,7 +20,7 @@ app.use('/items', itemsRouter);
 app.use('/auth', usersRouter);
 
 const PORT = process.env.PORT || 5000;
-mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, useCreateIndex: true })
+mongoose.connect(process.env.DB_CONNECTION)
         .then(() => {
             console.log('Successfully connected to MongoDB');
             app.listen(PORT, () => {
